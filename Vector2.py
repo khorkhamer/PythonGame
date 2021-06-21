@@ -24,8 +24,17 @@ class Vector2:
     def __imul__(self, other):
         return self.__mul__(other)
 
-    def __len__(self):
+    def length(self):
         return math.sqrt(self.x ** 2 + self.y ** 2)
+
+    def normalize(self):
+        """
+        return a normalized vector. it doesn't change a internal state of the vector.
+        """
+        return Vector2(round(self.x / self.length()), round(self.y / self.length()))
+
+#    def __len__(self):
+#        return int(math.sqrt(self.x ** 2 + self.y ** 2))
 
     def __str__(self):
         return "x: " + str(self.x) + " --- y: " + str(self.y)
