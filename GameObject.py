@@ -1,6 +1,5 @@
 import pygame
-import Game1
-from Vector2 import Vector2
+from Constants import *
 
 
 def transform_coordinates(coordinate, scalar_x, scalar_y):
@@ -10,7 +9,7 @@ def transform_coordinates(coordinate, scalar_x, scalar_y):
 class GameObject(pygame.sprite.Sprite):
     def __init__(self, position):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((Game1.CELL_WIDTH, Game1.CELL_HEIGHT))
+        self.image = pygame.Surface(get_cell_size().tuple())
         self.rect = self.image.get_rect()
         self._position = position
 
@@ -22,6 +21,7 @@ class GameObject(pygame.sprite.Sprite):
 
     def move(self, direction, velocity, dt):
         self._position += (direction * velocity * dt)
-
+"""""
     def draw(self, painter):
         painter.show(self)
+        """
