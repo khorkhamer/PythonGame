@@ -1,0 +1,38 @@
+{
+	"Start0": {
+		"position": {
+			"x": 0,
+			"y": 0
+		}
+	},
+	"Horizontal0": {
+		"position": {
+			"x": 1,
+			"y": 0
+		}
+	},
+	"Crossroad0": {
+		"position": {
+			"x": 2,
+			"y": 0
+		}
+	},
+	"Vertical0": {
+		"position": {
+			"x": 2,
+			"y": 1
+		}
+	},
+	"Vertical1": {
+		"position": {
+			"x": 2,
+			"y": 2
+		}
+	},
+	"Finish0": {
+		"position": {
+			"x": 2,
+			"y": 3
+		}
+	}
+}
