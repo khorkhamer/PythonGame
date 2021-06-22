@@ -23,3 +23,5 @@ arrow_down = pygame.transform.smoothscale(arrow_down, cell_size)
 arrow_left = pygame.transform.smoothscale(arrow_left, cell_size)
 arrow_up = pygame.transform.smoothscale(arrow_up, cell_size)
 arrow_right = pygame.transform.smoothscale(arrow_right, cell_size)
+#FIXME
+horizontal_road = vertical_road = crossroad

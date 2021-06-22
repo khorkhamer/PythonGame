@@ -8,7 +8,7 @@ import Scene
 class Game1(Game.Game):
 
     def __init__(self):
-        super().__init__(Scene.Scene(os.path.join(Working_directory, "scene.json")))
+        super().__init__(Scene.Scene(os.path.join(Working_directory, SCENE)))
 #        self._scene = Scene.Scene(os.path.join(Working_directory, "scene.json"))
 
     def load(self):

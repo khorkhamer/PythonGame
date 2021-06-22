@@ -1,0 +1,62 @@
+{
+  "Start0": {
+    "position": {
+      "x": 1,
+      "y": 1
+    }
+  },
+  "Horizontal0": {
+    "position": {
+      "x": 2,
+      "y": 1
+    }
+  },
+  "Horizontal1": {
+    "position": {
+      "x": 3,
+      "y": 1
+    }
+  },
+  "Crossroad0": {
+    "position": {
+      "x": 4,
+      "y": 1
+    }
+  },
+  "Vertical0": {
+    "position": {
+      "x": 4,
+      "y": 2
+    }
+  },
+  "Crossroad1": {
+    "position": {
+      "x": 4,
+      "y": 3
+    }
+  },
+  "Horizontal2": {
+    "position": {
+      "x": 3,
+      "y": 3
+    }
+  },
+  "Crossroad2": {
+    "position": {
+      "x": 2,
+      "y": 3
+    }
+  },
+  "Vertical1": {
+    "position": {
+      "x": 2,
+      "y": 4
+    }
+  },
+  "Finish0": {
+    "position": {
+      "x": 2,
+      "y": 5
+    }
+  }
+}

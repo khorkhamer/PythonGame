@@ -9,7 +9,7 @@ class Game:
         pygame.init()
         self._screen = pygame.display.set_mode((WIDTH, HEIGHT))
         self._clock = pygame.time.Clock()
-        self._controller = Controller.Controller(IP, MPORT)
+        self._controller = Controller.Controller(MIP, MPORT)
         self._scene = scene
         self._prev_time = time.time()
         self._all_sprites = pygame.sprite.Group()
