@@ -6,10 +6,12 @@ HEIGHT = 660
 WHITE = (255, 255, 255)
 Working_directory = os.path.dirname(__file__)
 Assets = os.path.join(Working_directory, 'assets')
-SCENE = "scenes/scene.json"
+SCENE = "scenes/scene1.json"
+#IP = "192.168.3.16"
 IP = "localhost"
 PORT = 8887
-MIP = "localhost"
+#MIP = "192.168.3.131"
+MIP = IP
 MPORT = 8889
 
 

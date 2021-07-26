@@ -15,7 +15,8 @@ class Game:
         self._all_sprites = pygame.sprite.Group()
         self._delta_time = 0
         self._running = True
-        pygame.display.set_caption("Python Game")
+        self._over = False
+        pygame.display.set_caption("Code and Play")
 
     def get_screen(self):
         return self._screen
@@ -35,6 +36,9 @@ class Game:
     def _draw(self):
         #        self.draw()
         #        self._all_sprites.update()
+        if self._over:
+            self._screen.fill((255, 0, 0))
+            pygame.time.wait(500)
         self._screen.fill(WHITE)
         #        self._all_sprites.draw(self._screen)
         self.draw(self._screen)

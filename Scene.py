@@ -15,7 +15,8 @@ STATE = {
 
 
 class Scene(GameObject.GameObject):
-    def __init__(self, uri):
+    def __init__(self, uri, reset):
+        self.reset = reset
         self._objects = []
         self._ball = None
         self._arrow = None
@@ -81,10 +82,34 @@ class Scene(GameObject.GameObject):
             self._need_draw = False
             """
 
+    def game_over(self):
+        if self._state == STATE["Idle"]:
+            for obj in self._objects:
+                if type(obj) != Ball.Ball:
+                    pos = obj.get_logical_position()
+                    bpos = self._ball.get_logical_position()
+                    if pos.x == bpos.x and pos.y == bpos.y:
+                        return False
+            pygame.time.wait(1000)
+            self.reset()
+            return True
+
+    def win(self):
+        if self._state == STATE["Idle"]:
+            bpos = self._ball.get_logical_position()
+            for i in range(len(self._objects)):
+                if type(self._objects[i]) == Road.FinishRoad:
+                    pos = self._objects[i].get_logical_position()
+                    if bpos.x == pos.x and bpos.y == pos.y:
+                        self._objects.popi()
+                        pygame.time.wait(1000)
+
     def update(self):
         pass
 
     def update(self, dt):
+        self.game_over()
+        self.win()
         self._turn_arrow()
         self._move_ball(dt)
         self._roads.update()
@@ -103,15 +128,23 @@ class Scene(GameObject.GameObject):
             d = self._ball.get_direction()
             if d == "up" and pos.y <= tmp.y:
                 self._ball.move_in_logical_coordinates(dir)
+                pos = self._ball.get_logical_position()
+                self._ball.set_position(GameObject.transform_coordinates(pos, get_cell_size().x, get_cell_size().y))
                 self._state = STATE["Idle"]
             elif d == "right" and pos.x >= tmp.x:
                 self._ball.move_in_logical_coordinates(dir)
+                pos = self._ball.get_logical_position()
+                self._ball.set_position(GameObject.transform_coordinates(pos, get_cell_size().x, get_cell_size().y))
                 self._state = STATE["Idle"]
             elif d == "down" and pos.y >= tmp.y:
                 self._ball.move_in_logical_coordinates(dir)
+                pos = self._ball.get_logical_position()
+                self._ball.set_position(GameObject.transform_coordinates(pos, get_cell_size().x, get_cell_size().y))
                 self._state = STATE["Idle"]
             elif d == "left" and pos.x <= tmp.x:
                 self._ball.move_in_logical_coordinates(dir)
+                pos = self._ball.get_logical_position()
+                self._ball.set_position(GameObject.transform_coordinates(pos, get_cell_size().x, get_cell_size().y))
                 self._state = STATE["Idle"]
             else:
                 self._ball.move(dir, self._ball.get_velocity(), dt)
